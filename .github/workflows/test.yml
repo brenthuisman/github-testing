@@ -10,6 +10,8 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
+      - name: Make a file
+        run: mkdir share/spack -p && touch share/spack/setup-env.sh
       - name: Set color
         id: random-color-generator
         run: echo "SELECTED_COLOR=`realpath share/spack/setup-env.sh`" >> "$GITHUB_OUTPUT"
