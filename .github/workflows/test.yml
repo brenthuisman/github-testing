@@ -17,4 +17,9 @@ jobs:
         run: echo "SELECTED_COLOR=`realpath share/spack/setup-env.sh`" >> "$GITHUB_OUTPUT"
       - name: Get color
         run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
+      - name: Test if in GH Action
+        run: |
+          if [[ -z "$GITHUB_ACTIONS" ]]; then
+            echo "GH Action speaking!"
+          fi
 
